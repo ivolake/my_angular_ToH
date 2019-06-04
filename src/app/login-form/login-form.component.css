@@ -1,0 +1,17 @@
+.login-form {
+  max-width: 30vw;
+  min-width: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form > * {
+  width: 100%;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

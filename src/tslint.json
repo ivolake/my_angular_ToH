@@ -12,6 +12,13 @@
       "element",
       "app",
       "kebab-case"
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-trailing-underscore",
+      "allow-leading-underscore",
+      "allow-snake-case",
     ]
   }
 }

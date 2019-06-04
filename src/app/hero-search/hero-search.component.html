@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <mat-nav-list>
+      <span mat-list-item *ngFor="let hero of heroes$ | async" routerLink="/detail/{{hero.id}}">
+        <button mat-raised-button id="search-card">{{hero.name}}</button>
+      </span>
+    </mat-nav-list>
+  </ul>
+</div>

@@ -1,0 +1,74 @@
+<!-- <h2>My Heroes</h2>
+<ol class="heroes">
+  <li *ngFor="let the_hero of heroes_list" [class.selected]="the_hero === selectedHero" (click)="onSelect(the_hero)">
+    <span class="badge">{{the_hero.id}}</span> {{the_hero.name}}
+  </li>
+</ol> -->
+
+<!-- TABLE OF HEROES -->
+<!-- ################################## -->
+
+<mat-form-field class="filter-table">
+  <input matInput type="text" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" [(ngModel)]="filter_value">
+  <button mat-button *ngIf="filter_value" matSuffix mat-icon-button aria-label="Clear"
+    (click)="applyFilter(''); filter_value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<table class="table-ripple" mat-table [dataSource]="mat_table_heroes_list" class="mat-elevation-z8" matRipple 
+     [matRippleUnbounded]="false"
+     [matRippleRadius]="30">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 8%"> Hero ID </th>
+    <td mat-cell *matCellDef="let one_hero" [class.selected]="one_hero === selectedHero" (click)="onSelect(one_hero)" style = "text-align: initial;"> {{one_hero.id}} </td>
+    <!-- <td mat-footer-cell *matFooterCellDef id = "add-hero-row"></td> -->
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header > Hero name </th>
+    <td mat-cell *matCellDef="let one_hero" [class.selected]="one_hero === selectedHero" (click)="onSelect(one_hero)"> {{one_hero.name}} </td>
+    <!-- <td mat-footer-cell *matFooterCellDef></td> -->
+  </ng-container>
+
+    <!-- Details Column -->
+    <ng-container matColumnDef="details" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: left;" > Hero details </th>
+      <td mat-cell *matCellDef="let one_hero" [class.selected]="one_hero === selectedHero" (click)="onSelect(one_hero)"  style="text-align: left;">
+        <a routerLink="/detail/{{one_hero.id}}"><mat-icon>more_vert</mat-icon></a>
+        <mat-icon aria-label="Delete" id="delete-icon" (click)="delete(one_hero)" >delete</mat-icon>
+      </td>
+      <!-- <td mat-footer-cell *matFooterCellDef></td> -->
+    </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+</table>
+
+<mat-expansion-panel  id="add_field">
+  <mat-expansion-panel-header id="add_field_header">
+    <mat-panel-title>
+      Add new hero
+    </mat-panel-title>
+    <mat-panel-description>
+      Type his name
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-form-field>
+    <input matInput placeholder="Hero's name" #heroName>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</mat-expansion-panel>
+
+
+<!-- EDITOR -->
+<!-- ################################## -->
+
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

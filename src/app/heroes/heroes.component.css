@@ -1,0 +1,93 @@
+/* HeroesComponent's private CSS styles */
+
+
+#delete-icon{
+  color: black !important;
+}
+#delete-icon:hover{
+  cursor: pointer;
+}
+#add_field{
+  padding-top: 2em;
+}
+.mat-expansion-panel-header:hover{
+  background: rgb(205, 255, 240) !important; 
+}
+/* #add-hero-row{
+  left: 0;
+  width: 100%
+} */
+
+
+.input-form-field {
+  padding: 0.8em 0em 0em 0em;
+  width: 200px;
+  left: 2px;
+  top: 10px;
+  max-width: 200px;
+}
+.details-card {
+  max-width: 400px;
+  display: inline-block;
+  font-size: 20;
+  color: rgb(36, 47, 112);
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: rgb(219, 241, 217);
+  line-height: 1em;
+  position: relative;
+  left: 0px;
+  top: 10px;
+  height: 1.8em;
+  margin-right: .8em;
+  /* border-radius: 4px 0 0 4px; */
+}
+
+.table-ripple{
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* td{
+  z-index: initial !important;
+} */
+a:link{
+  color: initial;
+}
+a:visited{
+  color: initial;
+}
+a:active{
+  color: rgb(15, 150, 15);
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+}
+tr:hover {
+  color: #607D8B;
+  background-color: rgb(205, 255, 240);
+  left: .1em;
+}
+.filter-table {
+    max-width: 100%;
+    width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.selected {
+  background-color: rgb(161, 227, 230) !important;
+  color: rgb(64, 32, 245);
+}
+

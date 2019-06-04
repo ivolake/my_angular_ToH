@@ -1,0 +1,32 @@
+.navbar{
+  background: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999 !important;
+}
+
+.navbar-button{
+padding: 0 16px;
+margin-right: 10px;
+}
+.navbar-button:hover {
+  color: rgb(53, 185, 146);
+}
+
+.logout-button{
+padding: 0 16px;
+margin-right: 10px;
+display: flex;
+/* float: right !important; */
+justify-content: right !important;
+align-items: right !important;
+}
+.logout-button:hover {
+  color: rgb(53, 185, 146);
+}

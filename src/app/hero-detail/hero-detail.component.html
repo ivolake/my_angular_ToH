@@ -1,0 +1,26 @@
+<button (click)="goBack()" mat-raised-button><mat-icon>arrow_back</mat-icon>Go back</button>
+<div *ngIf="hero">
+  <mat-card class='details-card'>
+    {{hero.name | uppercase}} Details
+    <u>
+      <span class="id_badge">id: </span>
+      <span class="id_val">{{hero.id}}</span>
+    </u>
+  </mat-card>
+
+  <div>
+    <label>
+      <mat-form-field class="input-form-field">
+        <input matInput type="text" placeholder="Name of the hero" [(ngModel)]="hero.name">
+        <button mat-button *ngIf="hero.name" matSuffix mat-icon-button aria-label="Clear"
+          (click)="hero.name=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </label>
+  </div>
+      <button class="save-button" mat-fab color="accent" (click)="save()">Save</button>
+</div>
+
+<!-- [(ngModel)]="hero.id" -->
+<!-- (keyup)="hero.id=getHeroID(hero)" -->
